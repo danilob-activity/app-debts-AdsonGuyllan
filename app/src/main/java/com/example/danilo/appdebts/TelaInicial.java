@@ -7,6 +7,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.danilo.appdebts.classes.Category;
+import com.example.danilo.appdebts.dao.CategoryDAO;
 import com.example.danilo.appdebts.database.DatabaseHelper;
 
 public class TelaInicial extends AppCompatActivity {
@@ -23,6 +25,11 @@ public class TelaInicial extends AppCompatActivity {
         mLayout = findViewById(R.id.layout);
 
         createConnection();
+        Category cat = new Category("Tia do Lanche");
+        CategoryDAO catDao = new CategoryDAO(mConection);
+        catDao.insert(cat);
+        catDao.listCategories();
+        mConection.close();
     }
 
 
@@ -34,5 +41,12 @@ public class TelaInicial extends AppCompatActivity {
         } catch (SQLException e) {
             Snackbar.make(mLayout, e.toString(), Snackbar.LENGTH_LONG).show();
         }
+
+    }
+
+    public static void populateDatabase(){
+        createConnection();
+        Category cat1 = new Category("Quitanda")
+
     }
 }
