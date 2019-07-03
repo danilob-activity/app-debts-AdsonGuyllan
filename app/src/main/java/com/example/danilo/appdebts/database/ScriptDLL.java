@@ -14,7 +14,7 @@ public class ScriptDLL {
         return sql.toString();
         }
 
-    public static void createTableDebts() {
+    public static String createTableDebts() {
         StringBuilder sql = new StringBuilder();
         sql.append("CREATE TABLE dividas (");
         sql.append(" id INTEGER NOT NULL PRIMARY KEY,");
@@ -24,5 +24,10 @@ public class ScriptDLL {
         sql.append(" data_vencimento DATE NOT NULL,");
         sql.append(" data_pagamento DATE,");
         sql.append("FOREIGN KEY (cod_cat) REFERENCES");
+        return sql.toString();
+    }
+
+    public static String getCategory(){
+        return "select * from categories";
     }
 }

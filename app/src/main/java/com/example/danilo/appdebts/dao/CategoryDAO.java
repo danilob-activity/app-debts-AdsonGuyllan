@@ -31,9 +31,16 @@ public class CategoryDAO {
         params[0] = String.valueOf(id);
         mConnection.delete("categoria", "id = ?", params);
     }
-    
-    public void remove(int id){}
-    public void alter(Category cat){}
+
+    public void alter(Category cat){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("tipo", cat.getType());
+        String[] params = new String[1];
+        params[0] = String.valueOf(cat.getId());
+        mConnection.update("categoria",contentValues, "id=?", params);
+
+    }
+
     public List<Category> listCategories(){
         List<Category> categories = new ArrayList<Category>();
         Cursor result = mConnection.rawQuery("select * from categories",);
@@ -51,6 +58,8 @@ public class CategoryDAO {
         }
 
         return categories;
-    public Category getCategory(int id){return null;}
+    public Category getCategory(int id){
+        return null;
+    }
     }
 }
