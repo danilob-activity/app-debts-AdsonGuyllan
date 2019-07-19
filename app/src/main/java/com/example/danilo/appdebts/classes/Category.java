@@ -1,34 +1,37 @@
 package com.example.danilo.appdebts.classes;
 
-/**
- * Created by aluno on 27/06/19.
- */
-
 public class Category {
-    private long mId;
-    private String mType;
+    private long id;
+    private String type;
 
-    public Category(){
-
+    public Category() {
     }
 
-    public Category(String type){
-        mType = type;
+    public Category(String type) {
+        this.type = type;
     }
 
-    public long getId(){
-        return mId;
+    public long getId() {
+        return id;
     }
 
-    public void setId(long id){
-        mId = id;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getType(){
-        return mType;
+    public String getType() {
+        return type;
     }
 
-    public void setType(String type){
-        mType = type;
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                '}';
     }
 }

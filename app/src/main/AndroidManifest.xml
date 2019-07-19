@@ -20,7 +20,6 @@
             android:name=".MainWindow"
             android:label="@string/title_activity_main_window"
             android:theme="@style/AppTheme" />
-        <activity android:name=".database.InsertDebts"></activity>
     </application>
 
 </manifest>

@@ -1,63 +1,70 @@
 package com.example.danilo.appdebts.classes;
 
-/**
- * Created by aluno on 27/06/19.
- */
-
 public class Debts {
-    private long mId;
-    private Category mCategory;
-    private float mValue;
-    private String mDescription;
-    private String mpaymentDate;
-    private String mpayDate;
+    private long id;
+    private Category category;
+    private double value;
+    private String description;
+    private String paymentDate;
+    private String payDate;
 
     public long getId() {
-        return mId;
+        return id;
     }
 
     public void setId(long id) {
-        mId = id;
+        this.id = id;
     }
 
     public Category getCategory() {
-        return mCategory;
+        return category;
     }
 
     public void setCategory(Category category) {
-        mCategory = category;
+        this.category = category;
     }
 
-    public float getValue() {
-        return mValue;
+    public double getValue() {
+        return value;
     }
 
-    public void setValue(float value) {
-        mValue = value;
+    public void setValue(double value) {
+        this.value = value;
     }
 
     public String getDescription() {
-        return mDescription;
+        return description;
     }
 
     public void setDescription(String description) {
-        mDescription = description;
+        this.description = description;
     }
 
-    public String getMpaymentDate() {
-        return mpaymentDate;
+    public String getPaymentDate() {
+        return paymentDate;
     }
 
-    public void setMpaymentDate(String mpaymentDate) {
-        this.mpaymentDate = mpaymentDate;
+    public void setPaymentDate(String paymentDate) {
+        this.paymentDate = paymentDate;
     }
 
-    public String getMpayDate() {
-        return mpayDate;
+    public String getPayDate() {
+        return payDate;
     }
 
-    public void setMpayDate(String mpayDate) {
-        this.mpayDate = mpayDate;
+    public void setPayDate(String payDate) {
+        this.payDate = payDate;
     }
 
+    @Override
+    public String toString() {
+        return "Debt{" +
+                "id=" + id +
+                ", category=" + category +
+                ", value=" + value +
+                ", description='" + description + '\'' +
+                ", paymentDate='" + paymentDate + '\'' +
+                ", payDate='" + payDate + '\'' +
+                '}';
+    }
 }
